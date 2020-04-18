@@ -21,5 +21,5 @@ urlpatterns = [
 ]
 
 urlpatterns = [
-    path('http://DeliverMe.com', include('DeliverApp.urls')),
+    path('', include('DeliverApp.urls')),
 ]
