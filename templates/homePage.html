@@ -4,31 +4,81 @@
 {% load static %}
 {% load socialaccount %}
 {% block page_content %}
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" media="all" type="text/css" href="{% static 'Web_App/style.css' %}" />
     <title>DeliverMe | Home</title>
-    <h1>DeliverMe</h1>
-    <h3>Welcome to DeliverMe, a platform to move product on a personal scale.</h3>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1 class="center">DeliverMe</h1>
+    <br>
+    <h2 class="center">Welcome to DeliverMe, a platform to move product on a personal scale.</h2>
+    <br>
+    <br>
+    <br>
+
+<style>
+.center {
+ text-align: center
+}
+
+    h1 {
+    color: blue;
+    font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif ;
+    font-size: 400%;
+        font-weight: bold;
+    }
+
+h2 {
+    color: cornflowerblue;
+    font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
+    font-style: oblique;
+    font-size: 200%;
+    }
+</style>
+
 </head>
+
+
 <body>
-    <div>
+
+<style>
+    button {
+        color: black;
+        font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
+        font-size: 200%;
+    }
+
+    p{
+        color: black;
+        font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
+        font-size: 150%;
+    }
+
+    body{
+        background-color: aliceblue;
+    }
+</style>
+    <div class="center">
         {% if user.is_authenticated %}
           <p>Welcome, {{ user.username }} !</p>
         {% else %}
           <button><a href="{% provider_login_url 'google' %}">Login with Google</a></button>
         {% endif %}
-
     </div>
-    <div>
+    <br>
+    <br>
+    <div class="center">
         <button><a href="">Request a Delivery</a></button>
     </div>
-    <div>
-        <p>Perform a Delivery</p>
-    </div>
-    <div>
-        <p>Apps</p>
+    <br>
+    <br>
+    <div class = "center">
+        <button><a href="">Perform a Delivery</a></button>
     </div>
 </body>
 </html>
