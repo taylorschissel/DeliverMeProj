@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'base.html' %}
+{% load static %}
+{% load socialaccount %}
+{% block page_content %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" media="all" type="text/css" href="{% static 'Web_App/style.css' %}" />
+    <title>DeliverMe | Home</title>
+    <h1>DeliverMe</h1>
+    <h3>Welcome to DeliverMe, a platform to move product on a personal scale.</h3>
+</head>
+<body>
+    <div>
+        {% if user.is_authenticated %}
+          <p>Welcome, {{ user.username }} !</p>
+        {% else %}
+          <button><a href="{% provider_login_url 'google' %}">Login with Google</a></button>
+        {% endif %}
+
+    </div>
+    <div>
+        <button><a href="">Request a Delivery</a></button>
+    </div>
+    <div>
+        <p>Perform a Delivery</p>
+    </div>
+    <div>
+        <p>Apps</p>
+    </div>
+</body>
+</html>
+{% endblock %}
