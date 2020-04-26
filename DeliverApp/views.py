@@ -1,7 +1,10 @@
-from datetime import timezone
+
 
 from django.shortcuts import render, redirect, get_object_or_404
+from django.utils import timezone
+
 from DeliverApp.forms import DeliveryForm
+from .models import DeliveryRequest
 from django.views.generic import TemplateView
 
 
@@ -24,25 +27,9 @@ def requestDetail(request, pk):
     post = get_object_or_404(Post, pk=pk)
     return render(request, 'blog/post_detail.html', {'post': post})
 '''
+def requestList(request):
+    posts = DeliveryRequest.objects.all()
+    return render(request, 'requestList.html', {'posts': posts})
+
 def home(request):
-    return render(request, 'homePage.html')
-'''
-class DeliveryView(TemplateView):
-    template_name= 'deliveryRequest.html'
-
-    def get(self, request):
-        form = DeliveryForm()
-        return render(request, self.template_name, {'form': form})
-
-    def post(self, request):
-        form = DeliveryForm(request.POST)
-        if form.is_valid():
-            #form.save()
-            text = form.cleaned_data['pickupName','pickupStreetAddress', 'pickupCity', 'pickupState', 'pickupZipCode', 'dropoffName', 'dropoffStreetAddress', 'dropoffCity', 'dropoffSate','dropoffZipCode','item','description']
-            form = DeliveryForm()
-            return redirect('deliveryRequest')
-
-        args = {'form': form, 'text': text}
-        return render(request, self.template_name, args)
-
-'''
+    return render(request, 'homePage.html', {})

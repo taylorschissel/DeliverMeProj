@@ -25,7 +25,7 @@ urlpatterns = [
     path('request/', TemplateView.as_view(template_name="deliveryRequest.html")),
     path('accept/', TemplateView.as_view(template_name="deliveryAccept.html")),
     path('login/', TemplateView.as_view(template_name="loginPage.html")),
-    path('list/', TemplateView.as_view(template_name="requestList.html")),
+    path('list/', views.requestList, name='requestList'),
     path('newRequest/', views.newRequest, name='newRequest'),
     path('admin/', admin.site.urls),
     url('', include('social_django.urls', namespace='social')),

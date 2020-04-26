@@ -1,83 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+{% extends 'base.html' %}
 {% load static %}
+{% block page_content %}
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" media="all" type="text/css" href="{% static 'Web_App/style.css' %}" />
-    <title>DeliverMe | Home</title>
-    <br><br><br>
+    <title>DeliverMe | Jobs</title>
+    <br>
+    <br>
+    <br>
+    <br>
     <h1 class="center">DeliverMe</h1>
-    <h2 class="center">Accept a Delivery</h2>
-    <h3 class="center">Please select an available job and then press "Submit" to start the job. </h3>
-    <br><br><br><br>
+    <br>
+    <h2 class="center">Avaiilable Jobs</h2>
+    <br>
+    <br>
+    <br>
 
-    <style>
-        .center {
-            text-align: center
-        }
+<style>
+.center {
+ text-align: center
+}
 
-        h1{
-            color: blue;
-            font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif ;
-            font-size: 400%;
-             font-weight: bold;
-        }
+    h1 {
+    color: blue;
+    font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif ;
+    font-size: 400%;
+        font-weight: bold;
+    }
 
-        h2{
-             color: cornflowerblue;
-             font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
-                font-style: oblique;
-            font-size: 200%;
-        }
+h2 {
+    color: cornflowerblue;
+    font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
+    font-style: oblique;
+    font-size: 200%;
+    }
+</style>
 
-        body{
-             background-color: aliceblue;
-         }
-
-        label {
-            font-size: 150%;
-        }
-
-        p{
-            font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
-            font-size: 100%;
-        }
-
-        .dropdown {
-            position: relative;
-            display: inline-block;
-            background-color: white;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: white;
-            font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
-            min-width: 100%;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-        }
-
-        .dropdown:hover .dropdown-content {display: list-item}
-    </style>
 </head>
 
-{% block content %}
-    {% for post in posts %}
-        <div class="post">
-            <div class="date">
-                {{ post.published_date }}
-            </div>
-            <h2><a href="{% url 'requestDetail' pk=post.pk %}">{{ post.title }}</a></h2>
-            <p>{{ post.text|linebreaksbr }}</p>
-        </div>
-    {% endfor %}
+
+<body>
+
+<style>
+    button {
+        color: black;
+        font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
+        font-size: 200%;
+    }
+
+    p{
+        color: black;
+        font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
+        font-size: 150%;
+    }
+
+    body{
+        background-color: aliceblue;
+    }
+</style>
+{% for post in posts %}
+    <div>
+        <h2><a href="">{{ post.item }}</a></h2>
+        <p>{{ post.description }}</p>
+    </div>
+{% endfor %}
 {% endblock %}
-
-
-
-</html>
-
-<!-- filter available jobs by: state, city -> then only selected jobs show up-->
