@@ -20,9 +20,11 @@ from django.contrib.auth.views import LogoutView
 from django.urls import path, include
 from django.views.generic import TemplateView
 from django.contrib.auth import logout
+from DeliverApp.views import HomeView
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
-    path('', TemplateView.as_view(template_name="homePage.html")),
+    url(r'^$', HomeView.as_view(), name='home'),
     path('request/', TemplateView.as_view(template_name="deliveryRequest.html")),
     path('accept/', TemplateView.as_view(template_name="deliveryAccept.html")),
     path('login/', TemplateView.as_view(template_name="loginPage.html")),
@@ -32,3 +34,5 @@ urlpatterns = [
     url('', include('social_django.urls', namespace='social')),
     url(r'^logout$', LogoutView.as_view(),  name='logout'),
 ]
+
+urlpatterns += staticfiles_urlpatterns()

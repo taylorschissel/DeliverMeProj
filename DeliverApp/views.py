@@ -15,24 +15,28 @@ from django.http import HttpResponse, HttpResponseRedirect
   #  return render(request, 'DeliverApp/home.html',{'date': datetime.now(), 'login': current_user})
 
 
+class HomeView(TemplateView):
+    template_name = 'homePage.html'
 
 
-def home(request):
-    return render(request, 'homePage.html')
+#def home(request):
+ #   return render(request, 'homePage.html')
 
 class DeliveryView(TemplateView):
     template_name= 'deliveryRequest.html'
 
-    def get(self, request):
-        form = DeliveryForm()
-        return render(request, self.template_name, {'form': form})
+    def get(self, request, *args, **kwargs):
+        newform = DeliveryForm()
+        context= {'form': newform}
+        return render(request, 'deliveryRequest.html', context)
 
     def post(self, request):
         form = DeliveryForm(request.POST)
         if form.is_valid():
             form.save()
-            text = form.cleaned_data['pickupName','pickupStreetAddress', 'pickupCity', 'pickupState', 'pickupZipCode', 'dropoffName', 'dropoffStreetAddress', 'dropoffCity', 'dropoffSate','dropoffZipCode','item','description']
+           # text = form.cleaned_data['pickupName','pickupStreetAddress', 'pickupCity', 'pickupState', 'pickupZipCode', 'dropoffName', 'dropoffStreetAddress', 'dropoffCity', 'dropoffSate','dropoffZipCode','item','description']
+            form= DeliveryForm()
             return redirect('DeliverApp:home')
 
-        args = {'form': form, 'text': text}
-        return render(request, self.template_name, args)
+        #args = {'form': form, 'text': text}
+        #return render(request, self.template_name, args)
