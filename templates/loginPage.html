@@ -15,7 +15,7 @@
     <br>
     <h1 class="center">DeliverMe</h1>
     <br>
-    <h2 class="center">Welcome to DeliverMe, a platform to move product on a personal scale.</h2>
+    <h2 class="center">Login with:</h2>
     <br>
     <br>
     <br>
@@ -63,23 +63,17 @@ h2 {
     }
 </style>
     <div class="center">
-        {% if user.is_authenticated %}
-            <p>Welcome, {{ user.username }} !</p>
-            <button><a class="btn btn-primary" href="{% url 'logout' %}">Logout</a></button>
-        {% else %}
 
-            <meta http-equiv="Refresh" content="0; url=/login" />
-        {% endif %}
     </div>
     <br>
     <br>
     <div class="center">
-        <button><a href="/request">Request a Delivery</a></button>
+        <button><a href="{% url "social:begin" "google-oauth2" %}">Google</a></button>
     </div>
     <br>
     <br>
     <div class = "center">
-        <button><a href="/accept">Perform a Delivery</a></button>
+
     </div>
 </body>
 </html>
