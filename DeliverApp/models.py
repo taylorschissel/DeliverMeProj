@@ -1,10 +1,8 @@
-
-
+from django.conf import settings
 from django.db import models
 
 # Create your models here.
 from django.utils import timezone
-from social.pipeline import user
 
 
 class DeliveryRequest(models.Model):
@@ -23,13 +21,10 @@ class DeliveryRequest(models.Model):
 
     item = models.CharField(max_length=30)
     description = models.TextField()
-    dateCreated = models.DateTimeField(auto_now_add=True)
+    dateCreated = models.DateTimeField(default=timezone.now)
     #categories = models.ManyToManyField('Category', related_name='posts')
     lastModified = models.DateTimeField(auto_now=True)
 
-    def publish(self):
-        self.dateCreated = timezone.now()
-        self.save()
 
 class Category(models.Model):
 
