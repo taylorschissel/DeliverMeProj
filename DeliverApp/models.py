@@ -1,8 +1,10 @@
+from time import timezone
+
 from django.db import models
 
 # Create your models here.
 
-class deliveryRequest(models.Model):
+class DeliveryRequest(models.Model):
 
     pickupName = models.CharField(max_length=30)
     pickupStreetAddress = models.CharField(max_length=100)
@@ -21,7 +23,13 @@ class deliveryRequest(models.Model):
     dateCreated = models.DateTimeField(auto_now_add=True)
     categories = models.ManyToManyField('Category', related_name='posts')
     lastModified = models.DateTimeField(auto_now=True)
+    author = models.CharField(max_length=100)
 
+    def publish(self):
+        self.dateCreated = timezone.now()
+        self.save()
+    def __str__(self):
+        return self.title
 class Category(models.Model):
 
     name = models.CharField(max_length=20)

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 {% load static %}
+{% block content %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,31 +10,27 @@
     <br><br><br>
     <h1 class="center">DeliverMe</h1>
     <h2 class="center">Request a Delivery</h2>
-    <br><br><br><br>
+    <br><br>
 
     <style>
         .center {
             text-align: center
         }
-
         h1{
             color: blue;
             font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif ;
             font-size: 400%;
              font-weight: bold;
         }
-
         h2{
              color: cornflowerblue;
              font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
                 font-style: oblique;
             font-size: 200%;
         }
-
         body{
         background-color: aliceblue;
     }
-
     label {
         font-size: 150%;
     }
@@ -43,24 +40,12 @@
 </head>
 <body>
 <div class="center">
-    <!--<form action="/accept/" method="post"> remove all the input and keep the button-->
-    <form method="post">
-        {% csrf_token %}
+    <form method="POST" class="post-form">{% csrf_token %}
         {{ form.as_p }}
-        <!--<label for="fname">First Name:</label><br>
-    <input type="text" id="fname" name="fname"><br><br><br>
-        <label for="lname">Last Name:</label><br>
-    <input type="text" id="lname" name="lname"><br><br><br>
-        <label for="saddress">Street Address:</label><br>
-    <input type="text" id="saddress" name="saddress"><br><br><br>
-        <label for="city">City:</label><br>
-    <input type="text" id="city" name="city"><br><br><br>
-        <label for="state">State:</label><br>
-    <input type="text" id="state" name="state"><br><br><br> -->
-        <button type="submit">Submit</button>
-        </form>
-    <!--<input type="submit" value="Submit"> -->
-    <h3>{{ text }}</h3>
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
 </div>
 </body>
 </html>
+
+{% endblock %}
