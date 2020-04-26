@@ -12,11 +12,7 @@
     <div class>
     <a href="http://127.0.0.1:8000/"><img src="https://i.ibb.co/vHVnLqk/logo.jpg" alt="logo" width = 100 height = 80></a><br /><a target='_blank' href='http://127.0.0.1:8000/'></a><br />
     </div>
-    <h1 class="center">DeliverMe</h1>
-    <br>
     <h2 class="center">Available Jobs</h2>
-    <br>
-    <br>
     <br>
 
 <style>
@@ -54,7 +50,7 @@ h2 {
     p{
         color: black;
         font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
-        font-size: 150%;
+        font-size: 75%;
     }
 
     body{
@@ -63,10 +59,27 @@ h2 {
 </style>
 
 
-{% for post in posts %}
-    <div>
-        <h2><a href="{% url 'requestDetail' pk=post.pk %}">{{ post.item }}</a></h2>
-        <p>{{ post.description }}</p>
+    <div class="post">
+        {% if post.published_date %}
+            <div class="date">
+                {{ post.published_date }}
+            </div>
+        {% endif %}
+        <h2>{{ post.item }}</h2>
+        <h4>{{ post.description }}</h4>
+        <h3>Pickup</h3>
+        <p>Name: {{ post.pickupName }}</p>
+        <p>Street Address: {{ post.pickupStreetAddress }}</p>
+        <p>City: {{ post.pickupCity }}</p>
+        <p>State: {{ post.pickupState }}</p>
+        <p>Zipcode: {{ post.pickupZipcode }}</p>
+        <h3>Dropoff</h3>
+        <p>Name: {{ post.dropoffName }}</p>
+        <p>Street Address: {{ post.dropoffStreetAddress }}</p>
+        <p>City: {{ post.dropoffCity }}</p>
+        <p>State: {{ post.dropoffState }}</p>
+        <p>Zipcode: {{ post.dropoffZipcode }}</p>
+
+
     </div>
-{% endfor %}
 {% endblock %}

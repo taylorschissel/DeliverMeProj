@@ -15,18 +15,17 @@ def newRequest(request):
         form = DeliveryForm(request.POST)
         if form.is_valid():
             post = form.save(commit=False)
-            post.author = request.user
             post.dateCreated = timezone.now()
             post.save()
             return redirect('requestDetail', pk=post.pk)
     else:
         form = DeliveryForm()
     return render(request, 'deliveryRequest.html', {'form': form})
-'''
+
 def requestDetail(request, pk):
-    post = get_object_or_404(Post, pk=pk)
-    return render(request, 'blog/post_detail.html', {'post': post})
-'''
+    post = get_object_or_404(DeliveryRequest, pk=pk)
+    return render(request, 'requestDetails.html', {'post': post})
+
 def requestList(request):
     posts = DeliveryRequest.objects.all()
     return render(request, 'requestList.html', {'posts': posts})

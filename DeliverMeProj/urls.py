@@ -30,6 +30,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     url('', include('social_django.urls', namespace='social')),
     url(r'^logout$', LogoutView.as_view(),  name='logout'),
-    #path('<int:pk>/', views.requestDetail, name='requestDetail'),
+    path('<int:pk>/', views.requestDetail, name='requestDetail'),
 
 ]
