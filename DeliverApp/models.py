@@ -4,7 +4,6 @@ from django.db import models
 
 # Create your models here.
 from django.utils import timezone
-from social.pipeline import user
 
 
 class DeliveryRequest(models.Model):
