@@ -1,104 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-{% extends 'base.html' %}
-{% block page_content %}
-
+{% load static %}
+{% block content %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" media="all" type="text/css" href="{% static 'Web_App/style.css' %}" />
     <title>DeliverMe | Home</title>
-    <br>
-    <div class="nav-bar">
-    <a href="/"><img src="https://raw.githubusercontent.com/taylorschissel/DeliverMeProj/working_forms/templates/delivermelogo.png" alt="logo" width = 200 height = 60></a><a target='_blank' href='http://127.0.0.1:8000/'></a>
+    <br><br><br>
+    <h1 class="center">DeliverMe</h1>
+    <h2 class="center">Request a Delivery</h2>
+    <br><br>
 
-        <ul>
-         <li><a href="{% url 'logout' %}">Logout</a></li>
-         <li><a href="/about/">About</a></li>
-         <li><a href="/list/">View Jobs</a></li>
-        <li><a href="{% url 'newRequest' %}" class="top-menu">New Job</a></li>
-         <li><a href="/">Home</a></li>
+    <style>
+        .center {
+            text-align: center
+        }
 
-    </ul>
-        </div>
-    <br>
-    <br>
-    <h2 class="center">Welcome to DeliverMe, a platform to move product on a personal scale.</h2>
+        h1{
+            color: blue;
+            font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif ;
+            font-size: 400%;
+             font-weight: bold;
+        }
 
+        h2{
+             color: cornflowerblue;
+             font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
+                font-style: oblique;
+            font-size: 200%;
+        }
 
-<style>
-.center {
- text-align: center;
-}
-
-    li {
-  display: inline;
-    }
-    h1 {
-    color: blue;
-    font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif ;
-    font-size: 400%;
-        font-weight: bold;
-    }
-
-h2 {
-    color: cornflowerblue;
-    font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
-    font-style: oblique;
-    font-size: 200%;
-    }
-    ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-        display: inline;
-}
-
-li {
-  float: right;
-    display: inline;
-}
-
-li a {
-  display: block;
-  color: black;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-/* Change the link color to #111 (black) on hover */
-li a:hover {
-  background-color: #111;
-}
-    logo{
-        display: inline;
-
-    }
-</style>
-
-</head>
-
-
-<body>
-
-<style>
-    button {
-        color: black;
-        font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
-        font-size: 200%;
-    }
-
-    p{
-        color: black;
-        font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
-        font-size: 150%;
-    }
-
-    body{
+        body{
         background-color: aliceblue;
-    }
-</style>
+        }
+
+        label {
+            font-size: 150%;
+        }
+
+         a {
+            position: absolute;
+            top: 10%;
+            left: 5%;
+            background-image: url("https://ibb.co/pxbF4wd");
+        }
+
+        img {
+            width: 45%;
+            height: 45%;
+        }
+    </style>
+
+
 </head>
 <body>
 <div class="center">
@@ -107,6 +61,11 @@ li a:hover {
         <button type="submit" class="save btn btn-default">Save</button>
     </form>
 </div>
+
+<div class>
+    <a href="http://127.0.0.1:8000/"><img src="https://i.ibb.co/vHVnLqk/logo.jpg" alt="logo" ></a><br /><a target='_blank' href='http://127.0.0.1:8000/'></a><br />
+</div>
+
 </body>
 </html>
 
