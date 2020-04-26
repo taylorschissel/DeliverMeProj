@@ -1,42 +1,35 @@
-from django.shortcuts import render, redirect
+
+
+from django.shortcuts import render, redirect, get_object_or_404
+from django.utils import timezone
+
 from DeliverApp.forms import DeliveryForm
+from .models import DeliveryRequest
 from django.views.generic import TemplateView
 
 
 # Create your views here.
 
-from django.http import HttpResponse, HttpResponseRedirect
-#from django.shortcuts import  get_object_or_404, render
-#from django.urls import reverse
-
-#def home(request):
-    #message = "This is the DeliverMe Website"
- #   current_user= "Taylor Schissel"
-  #  return render(request, 'DeliverApp/home.html',{'date': datetime.now(), 'login': current_user})
-
-
-class HomeView(TemplateView):
-    template_name = 'homePage.html'
-
-
-#def home(request):
- #   return render(request, 'homePage.html')
-
-class DeliveryView(TemplateView):
-    template_name= 'deliveryRequest.html'
-
-    def get(self, request, *args, **kwargs):
-        newform = DeliveryForm()
-        context= {'form': newform}
-        return render(request, 'deliveryRequest.html', context)
-
-    def post(self, request):
+def newRequest(request):
+    if request.method == "POST":
         form = DeliveryForm(request.POST)
         if form.is_valid():
-            form.save()
-           # text = form.cleaned_data['pickupName','pickupStreetAddress', 'pickupCity', 'pickupState', 'pickupZipCode', 'dropoffName', 'dropoffStreetAddress', 'dropoffCity', 'dropoffSate','dropoffZipCode','item','description']
-            form= DeliveryForm()
-            return redirect('DeliverApp:home')
+            post = form.save(commit=False)
+            post.author = request.user
+            post.dateCreated = timezone.now()
+            post.save()
+            return redirect('requestDetail', pk=post.pk)
+    else:
+        form = DeliveryForm()
+    return render(request, 'deliveryRequest.html', {'form': form})
+'''
+def requestDetail(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    return render(request, 'blog/post_detail.html', {'post': post})
+'''
+def requestList(request):
+    posts = DeliveryRequest.objects.all()
+    return render(request, 'requestList.html', {'posts': posts})
 
-        #args = {'form': form, 'text': text}
-        #return render(request, self.template_name, args)
+def home(request):
+    return render(request, 'homePage.html', {})

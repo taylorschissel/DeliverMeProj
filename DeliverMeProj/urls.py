@@ -15,24 +15,21 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from django.conf import settings
 from django.contrib.auth.views import LogoutView
 from django.urls import path, include
 from django.views.generic import TemplateView
-from django.contrib.auth import logout
-from DeliverApp.views import HomeView
-from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from DeliverApp import views
 
 urlpatterns = [
-    url(r'^$', HomeView.as_view(), name='home'),
+    path('', TemplateView.as_view(template_name="homePage.html")),
     path('request/', TemplateView.as_view(template_name="deliveryRequest.html")),
     path('accept/', TemplateView.as_view(template_name="deliveryAccept.html")),
     path('login/', TemplateView.as_view(template_name="loginPage.html")),
-
+    path('list/', views.requestList, name='requestList'),
+    path('newRequest/', views.newRequest, name='newRequest'),
     path('admin/', admin.site.urls),
-    #path('accounts/', include('allauth.urls')),
     url('', include('social_django.urls', namespace='social')),
     url(r'^logout$', LogoutView.as_view(),  name='logout'),
-]
+    #path('<int:pk>/', views.requestDetail, name='requestDetail'),
 
-urlpatterns += staticfiles_urlpatterns()
+]

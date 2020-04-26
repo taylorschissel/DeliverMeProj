@@ -1,6 +1,6 @@
 from django.contrib import admin
-from DeliverApp.models import deliveryRequest
 
 # Register your models here.
+from DeliverApp.models import DeliveryRequest
 
-admin.site.register(deliveryRequest)
+admin.site.register(DeliveryRequest)

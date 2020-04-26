@@ -8,14 +8,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" media="all" type="text/css" href="{% static 'Web_App/style.css' %}" />
-    <title>DeliverMe | Home</title>
+    <title>DeliverMe | Jobs</title>
     <br>
     <br>
     <br>
     <br>
     <h1 class="center">DeliverMe</h1>
     <br>
-    <h2 class="center">Welcome to DeliverMe, a platform to move product on a personal scale.</h2>
+    <h2 class="center">Avaiilable Jobs</h2>
     <br>
     <br>
     <br>
@@ -62,25 +62,10 @@ h2 {
         background-color: aliceblue;
     }
 </style>
-    <div class="center">
-        {% if user.is_authenticated %}
-            <p>Welcome, {{ user.username }} !</p>
-            <a class="btn btn-primary" href="{% url 'logout' %}">Logout</a>
-        {% else %}
-
-            <meta http-equiv="Refresh" content="0; url=/login" />
-        {% endif %}
+{% for post in posts %}
+    <div>
+        <h2><a href="">{{ post.item }}</a></h2>
+        <p>{{ post.description }}</p>
     </div>
-    <br>
-    <br>
-    <div class="center">
-        <button><a href="{% url 'newRequest' %}" class="top-menu">Request a Delivery</a></button>
-    </div>
-    <br>
-    <br>
-    <div class = "center">
-        <button><a href="/accept">Perform a Delivery</a></button>
-    </div>
-</body>
-</html>
+{% endfor %}
 {% endblock %}
