@@ -31,5 +31,6 @@ urlpatterns = [
     url('', include('social_django.urls', namespace='social')),
     url(r'^logout$', LogoutView.as_view(),  name='logout'),
     path('<int:pk>/', views.requestDetail, name='requestDetail'),
+    path('about/', TemplateView.as_view(template_name='about.html'))
 
 ]
