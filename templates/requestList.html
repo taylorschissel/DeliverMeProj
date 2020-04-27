@@ -23,66 +23,59 @@
     <br>
     <br>
 
-
 <style>
-.center {
- text-align: center;
-}
+    .center {
+        text-align: center;
+    }
 
     li {
-  display: inline;
+        display: inline;
     }
-    h1 {
-    color: blue;
-    font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif ;
-    font-size: 400%;
+
+   h1 {
+        color: cornflowerblue;
+        font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
+        font-style: oblique;
+        font-size: 200%;
+    }
+
+    h2 {
+        color:cornflowerblue;
+        font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
+        font-size: 175%;
         font-weight: bold;
     }
 
-h2 {
-    color: cornflowerblue;
-    font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
-    font-style: oblique;
-    font-size: 200%;
-    }
     ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
         display: inline;
-}
+    }
 
-li {
-  float: right;
-    display: inline;
-}
+    li {
+        float: right;
+        display: inline;
+    }
 
-li a {
-  display: block;
-  color: black;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
+    li a {
+        display: block;
+        color: black;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
 
 /* Change the link color to #111 (black) on hover */
-li a:hover {
-  background-color: #111;
-}
-
-    logo{
-        display: inline;
-
+    li a:hover {
+        background-color: #111;
     }
-</style>
 
-</head>
+    img{
+        display: inline;
+    }
 
-
-<body>
-
-<style>
     button {
         color: black;
         font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
@@ -99,17 +92,27 @@ li a:hover {
     body{
         background-color: aliceblue;
     }
+
     h2{
-        margin-left: 25px;
         font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
         font-size: 200%;
         color: black;
     }
+
     h3{
+        color: cornflowerblue;
+        font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
         margin-left: 50px;
+        font-weight: bold;
+        font-size: 170%;
     }
 </style>
-<h2>Available Jobs</h2>
+</head>
+
+<body>
+<h1 class="center">Welcome to DeliverMe, a platform to move product on a personal scale.</h1><br>
+<h2 class="center">Available Jobs</h2><br>
+
 <div id="list-container">
 {% for post in posts %}
     <div>
