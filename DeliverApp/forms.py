@@ -1,6 +1,7 @@
 from django import forms
 from .models import DeliveryRequest
 
+#this class creates the form used when creating a new delivery request
 class DeliveryForm(forms.ModelForm):
     class Meta:
         model = DeliveryRequest
