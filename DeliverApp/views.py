@@ -32,3 +32,5 @@ def requestList(request):
 
 def home(request):
     return render(request, 'homePage.html', {})
+
+#def isAccepted(request)
