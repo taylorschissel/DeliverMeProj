@@ -25,7 +25,7 @@ class DeliveryRequest(models.Model):
     #categories = models.ManyToManyField('Category', related_name='posts')
     lastModified = models.DateTimeField(auto_now=True)
 
-    jobAccepted = models.BooleanField(default=False)
+    #jobAccepted = models.BooleanField(default=False)
 
 
 class Category(models.Model):
