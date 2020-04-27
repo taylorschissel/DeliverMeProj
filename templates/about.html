@@ -2,9 +2,99 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+    <title>DeliverMe | About</title>
+    <br>
+    <div class="nav-bar">
+    <a href="/"><img src="https://raw.githubusercontent.com/taylorschissel/DeliverMeProj/working_forms/templates/delivermelogo.png" alt="logo" width = 200 height = 60></a><a target='_blank' href='http://127.0.0.1:8000/'></a>
 
+        <ul>
+         <li><a href="{% url 'logout' %}">Logout</a></li>
+         <li><a href="/about/">About</a></li>
+         <li><a href="/list/">View Jobs</a></li>
+        <li><a href="{% url 'newRequest' %}" class="top-menu">New Job</a></li>
+         <li><a href="/">Home</a></li>
+
+    </ul>
+        </div>
+    <br>
+    <br>
+
+    <style>
+        .center {
+            text-align: center;
+        }
+
+        li {
+            display: inline;
+         }
+
+        h1 {
+            color: cornflowerblue;
+            font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
+            font-style: oblique;
+            font-size: 200%;
+        }
+
+        p {
+            color: black;
+            font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
+            font-size: 150%;
+            margin-left: 20%;
+            margin-right: 20%;
+            line-height: 2;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            display: inline;
+         }
+
+        li {
+            float: right;
+            display: inline;
+        }
+
+        li a {
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+/* Change the link color to #111 (black) on hover */
+        li a:hover {
+            background-color: #111;
+        }
+
+        img{
+            display: inline;
+        }
+
+        button {
+            color: black;
+            font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
+            font-size: 200%;
+        }
+
+        body{
+            background-color: aliceblue;
+        }
+    </style>
+
+</head>
+
+<body>
+<h1 class="center">Welcome to DeliverMe, a platform to move product on a personal scale.</h1><br>
+<p class="center">
+    DeliverMe is designed to help you in your everyday life. Think Uber, but for items instead of people. Restaurant orders, grocery orders,
+    furniture from Ikea that is too big for your car... any object that you need help transporting and do not have the time or space to pick up
+    yourself. DeliverMe has you covered. To use the app, simply decide if you want to request a delivery by choosing "New Job" or if you want
+    to deliver someone else's items for them by choosing "View Jobs" to see the list of current items waiting to be picked up. With this user-friendly
+    app, your life will become easier in no time!
+</p>
 </body>
 </html>

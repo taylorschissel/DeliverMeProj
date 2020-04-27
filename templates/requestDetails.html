@@ -25,63 +25,72 @@
 
 
 <style>
-.center {
- text-align: center;
-}
+    .center {
+        text-align: center;
+    }
 
     li {
-  display: inline;
+        display: inline;
     }
+
     h1 {
-    color: blue;
-    font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif ;
-    font-size: 400%;
+        color: cornflowerblue;
+        font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif ;
+        font-size: 200%;
         font-weight: bold;
     }
 
-h2 {
-    color: cornflowerblue;
-    font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
-    font-style: oblique;
-    font-size: 200%;
+    h2 {
+        color: cornflowerblue;
+        font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
+        font-style: oblique;
+        font-size: 170%;
     }
+
+    h3 {
+        color: black;
+        font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
+        font-weight: bold;
+        font-size: 125%;
+    }
+
+    h4 {
+        color: black;
+        font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
+        font-weight: bold;
+        font-size: 125%;
+    }
+
     ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
         display: inline;
-}
+    }
 
-li {
-  float: right;
-    display: inline;
-}
+    li {
+        float: right;
+        display: inline;
+    }
 
-li a {
-  display: block;
-  color: black;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
+    li a {
+        display: block;
+        color: black;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
 
 /* Change the link color to #111 (black) on hover */
-li a:hover {
-  background-color: #111;
-}
-    logo{
-        display: inline;
-
+    li a:hover {
+        background-color: #111;
     }
-</style>
 
-</head>
+    img {
+        display: inline;
+    }
 
-
-<body>
-
-<style>
     button {
         color: black;
         font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
@@ -97,36 +106,37 @@ li a:hover {
     body{
         background-color: aliceblue;
     }
+
     a{
         color: black;
         font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
         font-size: 100%;
     }
 </style>
+</head>
 
+<body>
+<div class="post">
+    {% if post.published_date %}
+        <div class="date">
+            {{ post.published_date }}
+        </div>
+    {% endif %}
+    <h1 class="center">{{ post.item }}</h1>
+    <h2 class="center">{{ post.description }}</h2><br>
+    <h3 class="center">Pickup</h3>
+    <p class="center">Name: {{ post.pickupName }}</p>
+    <p class="center">Street Address: {{ post.pickupStreetAddress }}</p>
+    <p class="center">City: {{ post.pickupCity }}</p>
+    <p class="center">State: {{ post.pickupState }}</p>
+    <p class="center">Zipcode: {{ post.pickupZipcode }}</p><br>
+    <h4 class="center">Dropoff</h4>
+    <p class="center">Name: {{ post.dropoffName }}</p>
+    <p class="center">Street Address: {{ post.dropoffStreetAddress }}</p>
+    <p class="center">City: {{ post.dropoffCity }}</p>
+    <p class="center">State: {{ post.dropoffState }}</p>
+    <p class="center">Zipcode: {{ post.dropoffZipcode }}</p>
 
-    <div class="post">
-        {% if post.published_date %}
-            <div class="date">
-                {{ post.published_date }}
-            </div>
-        {% endif %}
-        <h2>{{ post.item }}</h2>
-        <h4>{{ post.description }}</h4>
-        <h3>Pickup</h3>
-        <p>Name: {{ post.pickupName }}</p>
-        <p>Street Address: {{ post.pickupStreetAddress }}</p>
-        <p>City: {{ post.pickupCity }}</p>
-        <p>State: {{ post.pickupState }}</p>
-        <p>Zipcode: {{ post.pickupZipcode }}</p>
-        <h3>Dropoff</h3>
-        <p>Name: {{ post.dropoffName }}</p>
-        <p>Street Address: {{ post.dropoffStreetAddress }}</p>
-        <p>City: {{ post.dropoffCity }}</p>
-        <p>State: {{ post.dropoffState }}</p>
-        <p>Zipcode: {{ post.dropoffZipcode }}</p>
-
-
-
-    </div>
+    <button type="button" class="btn btn-primary active"><a href=''>Accept this Job</a></button>
+</div>
 {% endblock %}
