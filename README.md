@@ -23,10 +23,9 @@
 
 *Setup*
 * The operating system used to construct the DeliverMe website was Mac OS X
-* In order to run the program, the following packages must be installed:
-	* Pycharm Professional 2020.1
+* In order to run the program, the following programs must be installed:
+	* Pycharm Professional 2020.1 or equivalent IDE
 	* Python 3.8.2
-	* Django 3.0.5
   
 ## Features
 *Installing a Virtual Environment*
@@ -36,6 +35,12 @@
 * cd into the new project directory: cd DeliverMe
 * Create a virtual environment with Python: virtualenv venv -p python 3
 * To activate the virtual environment, use: source/venv/bin/activate
+* Once activated, install the following packages into the venv:
+	*Django: pip install django
+	*Django Admin: pip install django-admin
+	*Social Auth: pip install social-auth-app-django
+* Once finished, navigate to the DeliverMeProj directory containing manage.py,
+* and run the commands "python manage.py makemigrations" & "python manage.py migrate"
 
 *How to Run*
 * Type the following line in the command line: python manage.py runserver
