@@ -36,9 +36,9 @@
 * Create a virtual environment with Python: virtualenv venv -p python 3
 * To activate the virtual environment, use: source/venv/bin/activate
 * Once activated, install the following packages into the venv:
-	*Django: pip install django
-	*Django Admin: pip install django-admin
-	*Social Auth: pip install social-auth-app-django
+	* Django: pip install django
+	* Django Admin: pip install django-admin
+	* Social Auth: pip install social-auth-app-django
 * Once finished, navigate to the DeliverMeProj directory containing manage.py,
 * and run the commands "python manage.py makemigrations" & "python manage.py migrate"
 
