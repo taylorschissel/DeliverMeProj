@@ -18,11 +18,11 @@ class DeliveryRequest(models.Model):
     dropoffCity = models.CharField(max_length=20)
     dropoffState = models.CharField(max_length=2)
     dropoffZipcode = models.CharField(max_length=5)
+    emailaddress= models.CharField(max_length=50, default= "")
 
     item = models.CharField(max_length=30)
     description = models.TextField()
     dateCreated = models.DateTimeField(default=timezone.now)
-    #categories = models.ManyToManyField('Category', related_name='posts')
     lastModified = models.DateTimeField(auto_now=True)
 
     #jobAccepted = models.BooleanField(default=False)

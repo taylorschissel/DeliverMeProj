@@ -16,7 +16,8 @@ class DeliveryForm(forms.ModelForm):
                   'dropoffStreetAddress',
                   'dropoffCity',
                   'dropoffState',
-                  'dropoffZipcode',)
+                  'dropoffZipcode',
+                  'emailaddress',)
         labels = {
             'item':'Item',
           'description':'Description',
@@ -30,4 +31,5 @@ class DeliveryForm(forms.ModelForm):
           'dropoffCity':'City',
           'dropoffState':'State',
           'dropoffZipcode':'Zipcode',
+            'emailaddress': 'Email Address',
         }
