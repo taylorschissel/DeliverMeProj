@@ -69,8 +69,7 @@
 * Back in the command line, hit the command key and C and the same time
 
 *Troubleshooting*
-* If you seem to be having issues with install, try varying the use of terms such as pip/pip3 and python/python3
-*These commands will vary depending on your operating system.
+* If you seem to be having issues with install, try varying the use of terms such as pip/pip3 and python/python3, as these commands will vary depending on your operating system.
 
 ## Contributors
 * Isaac Fluhr-Chapman
