@@ -3,7 +3,7 @@
 # DeliverMe README File
 
 ## Table of Contents
-
+1. Hosting
 1. Installation
 	1. Cloning
 	1. Setup
@@ -12,35 +12,38 @@
 	1. How to Run
 	1. The DeliverMe Webpage
 	1. How to Quit Running
+1. Troubleshooting
 1. Team Name and Contributors
 1. Support
 
-
+## Hosting
+* This web app is hosted at isaacfc4.pythonanywhere.com
+* Its hosting will be active until July 29, 2020
 ## Installation
 *Cloning*
 * Access the repository via the GitHub Link: https://github.com/taylorschissel/DeliverMeProj
 * Go to the green box where it says "Clone or download" to find the repository link
 
 *Setup*
-* The operating system used to construct the DeliverMe website was Mac OS X
-* In order to run the program, the following programs must be installed:
+* The operating system used to construct DeliverMe locally was Mac OS X
+* In order to run the DeliverMe, the following programs must be installed:
 	* Pycharm Professional 2020.1 or equivalent IDE
 	* Python 3.8.2
   
 ## Features
+*Installing the Project from Github*
+* In a terminal, navigate to a convenient directory and type: mkdir DeliverMeProj
+* Now navigate to that new directory and enter: sudo git clone https://github.com/taylorschissel/DeliverMeProj
 *Installing a Virtual Environment*
-* Install a virtual environment using: $ sudo pip install virtualenv
-* In termimal, cd to the desired directory. Here, use: cd DeliverMe
-* Create a new directory for the project: mkdir DeliverMe
-* cd into the new project directory: cd DeliverMe
-* Create a virtual environment with Python: virtualenv venv -p python 3
-* To activate the virtual environment, use: source/venv/bin/activate
+* Install the virtual environment package using: $ sudo pip install virtualenv
+* Create a virtual environment with Python: virtualenv venv -p python3.8
+* To activate the virtual environment, use: source venv/bin/activate
 * Once activated, install the following packages into the venv:
 	* Django: pip install django
 	* Django Admin: pip install django-admin
 	* Social Auth: pip install social-auth-app-django
 * Once finished, navigate to the DeliverMeProj directory containing manage.py,
-* and run the commands "python manage.py makemigrations" & "python manage.py migrate"
+* and run the commands "python3 manage.py makemigrations" & "python3 manage.py migrate"
 
 *How to Run*
 * Type the following line in the command line: python manage.py runserver
@@ -65,6 +68,9 @@
 *How to Quit Running*
 * Close the DeliverMe webpage tab
 * Back in the command line, hit the command key and C and the same time
+
+*Troubleshooting*
+* If you seem to be having issues with install, try varying the use of terms such as pip/pip3 and python/python3
 
 ## Contributors
 * Isaac Fluhr-Chapman
