@@ -1,6 +1,4 @@
-# DeliverMeProj
-
-# DeliverMe README File
+# DeliverMe
 
 ## Table of Contents
 1. Hosting
