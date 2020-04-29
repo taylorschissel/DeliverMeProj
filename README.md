@@ -42,6 +42,7 @@
 	* Social Auth: pip install social-auth-app-django
 * Once finished, navigate to the DeliverMeProj directory containing manage.py,
 * and run the commands "python3 manage.py makemigrations" & "python3 manage.py migrate"
+* Run the command python manage.py createsuperuser and create a super user account
 
 *How to Run*
 * Type the following line in the command line: python manage.py runserver
